@@ -9,12 +9,12 @@ import scalafx.scene.paint.Color._
 import scalafx.scene.paint._
 import scalafx.scene.text.Text
 
-object ScalaFXHelloWorld extends JFXApp3 {
+object ScalaFXDemo1 extends JFXApp3 {
 
   override def start(): Unit = {
     stage = new JFXApp3.PrimaryStage {
       //    initStyle(StageStyle.Unified)
-      title = "ScalaFX Hello World"
+      title = "ScalaFX Demo1"
       scene = new Scene {
         fill = Color.rgb(38, 38, 38)
         content = new HBox {

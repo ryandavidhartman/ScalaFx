@@ -11,16 +11,17 @@ case class State(snake: List[Position], food: Position) {
   def newState(dir: Direction): State = {
 
     val startingHeadPosition = snake.head
+
     val newHeadPosition = dir match {
       case Up =>    startingHeadPosition.copy(y = startingHeadPosition.y - Position.Delta)
       case Down =>  startingHeadPosition.copy(y = startingHeadPosition.y + Position.Delta)
       case Left =>  startingHeadPosition.copy(x = startingHeadPosition.x - Position.Delta)
-      case Right => startingHeadPosition.copy(y = startingHeadPosition.x + Position.Delta)
+      case Right => startingHeadPosition.copy(x = startingHeadPosition.x + Position.Delta)
       case _ =>     startingHeadPosition
     }
 
     val newSnake: List[Position] =
-      if(!Position.inbounds(newHeadPosition) || snake.tail.contains(newHeadPosition))
+      if(!Position.inbounds(newHeadPosition))// || snake.tail.contains(newHeadPosition))
         initialSnake
       else if(food == newHeadPosition)
         food :: snake

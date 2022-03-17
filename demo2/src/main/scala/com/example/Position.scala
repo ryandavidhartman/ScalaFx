@@ -16,7 +16,7 @@ case object Position {
     pos.x >= 0 && pos.x <= Width && pos.y >= 0 && pos.y <= Height
 
   def randomPosition(): Position =
-    Position(Random.nextInt(Width/Delta)*Delta, Random.nextInt(Height/Delta)*Delta)
+    Position(Random.nextInt(23)*Delta, Random.nextInt(23)*Delta)
 
   def makeRectangle(position: Position, color: Color) = new Rectangle {
     x = position.x
